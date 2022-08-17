@@ -1,16 +1,27 @@
-{{header}} {{column_left}}
+{{header}}
+{{column_left}}
 <div class='container'>
-    <div class="pull-right">
-        <div class='container-fluid'>
-        {# <form action="{{get}}">
-            <input class="btn btn-primary" type="submit" title="Get XML Products" />
-        </form> #}
-        <button class="btn btn-primary" type="submit" formaction="{{get}}" title="Get XML Products">Get XML Products</button>
-        <a class="btn btn-primary" href="{{get}}">Get XML Products</a>
-        <a class="btn btn-primary" href="{{add}}">Add Product</a>
+	<div class="pull-right">
+		<div
+			class='container-fluid'>
+			{# <form action="{{get}}">
+						            <input class="btn btn-primary" type="submit" title="Get XML Products" />
+						        </form> #}
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#prod-data">Show-Hide</button>
+			<a class="btn btn-primary" href="{{get}}">Get XML Products</a>
+			<a class="btn btn-primary" href="{{add}}">Add Product</a>
+		</div>
+	</div>
+	<div id="prod-data" class="d111">
+		{{productsXML}}
+	</div>
+	<div class="pull-right">
+		<div class="file-upload-wrapper">
+        <form action="{{add}}">
+			<input type="file" id="input-file-now" class="file-upload"/>
+            <input type="submit" value="Submit file"/>
+		</form>
         </div>
-        
-    </div>
-    
+	</div>
 </div>
 {{footer}}
