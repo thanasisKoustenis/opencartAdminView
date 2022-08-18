@@ -1,27 +1,33 @@
 {{header}}
 {{column_left}}
 <div class='container'>
-	<div class="pull-right">
-		<div
-			class='container-fluid'>
-			{# <form action="{{get}}">
-						            <input class="btn btn-primary" type="submit" title="Get XML Products" />
-						        </form> #}
-			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#prod-data">Show-Hide</button>
-			<a class="btn btn-primary" href="{{get}}">Get XML Products</a>
-			<a class="btn btn-primary" href="{{add}}">Add Product</a>
+	<div >
+		<div class='container-fluid'>
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#prod-data">Show XML Products</button>
+			{# <a class="btn btn-primary" href="{{get}}">Get XML Products</a> #}
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm">Add Product</button>
 		</div>
 	</div>
-	<div id="prod-data" class="d111">
+	<div id="prod-data" class="collapse">
 		{{productsXML}}
 	</div>
-	<div class="pull-right">
-		<div class="file-upload-wrapper">
-        <form action="{{add}}">
-			<input type="file" id="input-file-now" class="file-upload"/>
-            <input type="submit" value="Submit file"/>
-		</form>
-        </div>
+	<div class="form-group">
+		<div class="form-group">
+			<form action="{{add}}" method="post">
+				<input type="file" id="input-file-now" class="file-upload"/>
+				<input type="submit" value="Submit file"/>
+			</form>
+		</div>
 	</div>
+	<div id="addForm" class="collapse">
+		<h2>Add new product</h2>
+		<form action="{{add}}">
+			<input placeholder="Product Name" type="text" value="{{product_name}}"/>
+			<input placeholder="Meta tag title" type="text" value="{{meta_tag_title}}"/>
+			<input placeholder="Product model" type="text" value="{{model}}"/>
+			<input type="submit" value="save"/>
+		</form>
+	</div>
+
 </div>
 {{footer}}
