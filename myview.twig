@@ -1,14 +1,14 @@
 {{header}}
 {{column_left}}
-<div class='container'>
-	<div >
-		<div class='container-fluid'>
+<div class='d111'>
+	<div>
+		<div >
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#prod-data">Show XML Products</button>
 			{# <a class="btn btn-primary" href="{{get}}">Get XML Products</a> #}
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm">Add Product</button>
 		</div>
 	</div>
-	<div id="prod-data" class="collapse">
+	<div id="prod-data" class="collapse ">
 		{{productsXML}}
 	</div>
 	<div class="form-group">
@@ -28,6 +28,9 @@
 			<input type="submit" value="save"/>
 		</form>
 	</div>
+	{% if test  %}
+		<div>{{test}}</div>
+	{% endif %}
 
 </div>
 {{footer}}
