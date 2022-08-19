@@ -1,19 +1,17 @@
 {{header}}
 {{column_left}}
-<div class='d111'>
+<div class='pull-right'>
 	<div>
-		<div >
+		<div>
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#prod-data">Show XML Products</button>
 			{# <a class="btn btn-primary" href="{{get}}">Get XML Products</a> #}
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm">Add Product</button>
 		</div>
 	</div>
-	<div id="prod-data" class="collapse ">
-		{{productsXML}}
-	</div>
+
 	<div class="form-group">
 		<div class="form-group">
-			<form action="{{add}}" method="post">
+			<form action="{{addXML}}" method="post">
 				<input type="file" id="input-file-now" class="file-upload"/>
 				<input type="submit" value="Submit file"/>
 			</form>
@@ -21,16 +19,21 @@
 	</div>
 	<div id="addForm" class="collapse">
 		<h2>Add new product</h2>
-		<form action="{{add}}">
-			<input placeholder="Product Name" type="text" value="{{product_name}}"/>
-			<input placeholder="Meta tag title" type="text" value="{{meta_tag_title}}"/>
+		<form action="{{add}}" enctype="multipart/form-data" id="form1">
+			{# <input placeholder="Product Name" type="text" value="{{product_name}}"/>
+			<input placeholder="Meta tag title" type="text" value="{{meta_tag_title}}"/> #}
 			<input placeholder="Product model" type="text" value="{{model}}"/>
-			<input type="submit" value="save"/>
+			<button type="submit" form="form1">Save</button>
 		</form>
 	</div>
 	{% if test  %}
 		<div>{{test}}</div>
+	{% else %}
+		<h2>No data</h2>	
 	{% endif %}
 
+</div>
+<div id="prod-data" class="collapse ">
+	{{productsXML}}
 </div>
 {{footer}}
