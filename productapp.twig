@@ -1,0 +1,11 @@
+{{ header }}
+{{ column_left }}
+<div>
+	{% for product in products %}
+		{{product.product_id}}
+	{% endfor %}
+</div>
+<h1 class="pull-right" >Hello 2 world</h1>
+<h2 class = "pull-right">{{ test }}</h2>
+<button class="btn btn-primary">Save</button>
+{{ footer }}
