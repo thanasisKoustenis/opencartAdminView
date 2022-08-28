@@ -38,6 +38,9 @@
 			<tbody>
 				{% for product in products %}
 					<tr>
+						<td class='text-center'>
+							<input type='checkbox' name='selected[]' value="{{product.product_id}}"/>
+						</td>
 						<td scope="row">{{product.product_id}}</td>
 						<td>{{product.name}}</td>
 						<td>{{product.model}}</td>
