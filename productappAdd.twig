@@ -20,9 +20,35 @@
 			</ul>
 		</div>
 	</div>
-    <div class='container-fluid'>
-        
-    </div>
+	<div class='container-fluid'>
+		<div class='panel panel-default'>
+			<div class='panel-heading'>
+				<h3 class='panel-title'>
+					<i class='fa fa-pencil'></i>
+					{{text_form}}
+				</h3>
+			</div>
+
+			<div class='panel-body'>
+				<form action='{{action}}' class='form-horizontal' method='post' enctype='multipart/form-data' id='form-product'>
+					<ul class='nav nav-tabs'>
+						<li class='active'><a href='#tab-general' data-toggle='tab'>{{tab_general}}</a></li>
+						<li><a href='#tab-links' data-toggle='tab'>{{tab_links}}</a></li>
+						<li><a href='#tab-attribute' data-toggle='tab'>{{tab_attribute}}</a></li>
+						<li><a href='#tab-option' data-toggle='tab'>{{tab_option}}</a></li>
+						<li><a href='#tab-recurring' data-toggle='tab'>{{tab_recurring}}</a></li>
+						<li><a href='#tab-discount' data-toggle='tab'>{{tab_discount}}</a></li>
+					</ul>
+					<div class='tab-content'>
+						<div class='tab-pane active'>
+							<label class="col-sm-2 control-label" type='text' name='product_name'>Product Name</label>
+							<input />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 {{footer}}
