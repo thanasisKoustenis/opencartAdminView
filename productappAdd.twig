@@ -5,7 +5,7 @@
 	<div class='page-header'>
 		<div class='container-fluid'>
 			<div class='pull-right'>
-				<button class='btn btn-primary'>Save</button>
+				<button class='btn btn-primary' type='submit' form='form-product'>Save</button>
 				<a class='btn btn-danger'>Cancel</a>
 			</div>
 			<h1>{{title}}</h1>
@@ -32,17 +32,67 @@
 			<div class='panel-body'>
 				<form action='{{action}}' class='form-horizontal' method='post' enctype='multipart/form-data' id='form-product'>
 					<ul class='nav nav-tabs'>
-						<li class='active'><a href='#tab-general' data-toggle='tab'>{{tab_general}}</a></li>
-						<li><a href='#tab-links' data-toggle='tab'>{{tab_links}}</a></li>
-						<li><a href='#tab-attribute' data-toggle='tab'>{{tab_attribute}}</a></li>
-						<li><a href='#tab-option' data-toggle='tab'>{{tab_option}}</a></li>
-						<li><a href='#tab-recurring' data-toggle='tab'>{{tab_recurring}}</a></li>
-						<li><a href='#tab-discount' data-toggle='tab'>{{tab_discount}}</a></li>
+						<li class='active'>
+							<a href='#tab-general' data-toggle='tab'>{{tab_general}}</a>
+						</li>
+						<li>
+							<a href='#tab-links' data-toggle='tab'>{{tab_links}}</a>
+						</li>
+						<li>
+							<a href='#tab-attribute' data-toggle='tab'>{{tab_attribute}}</a>
+						</li>
+						<li>
+							<a href='#tab-option' data-toggle='tab'>{{tab_option}}</a>
+						</li>
+						<li>
+							<a href='#tab-recurring' data-toggle='tab'>{{tab_recurring}}</a>
+						</li>
+						<li>
+							<a href='#tab-discount' data-toggle='tab'>{{tab_discount}}</a>
+						</li>
 					</ul>
 					<div class='tab-content'>
-						<div class='tab-pane active'>
-							<label class="col-sm-2 control-label" type='text' name='product_name'>Product Name</label>
-							<input />
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-name">Product name</label>
+							<div class="col-sm-10">
+								<input type="text" name="name" value="{{ name }}" placeholder="Enter name" id="input-name" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-tag">Product tag</label>
+							<div class="col-sm-10">
+								<input type="text" name="tag" value="{{ tag }}" placeholder="Enter tag" id="input-tag" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-meta_title">Product meta title</label>
+							<div class="col-sm-10">
+								<input type="text" name="meta_title" value="{{ meta_title }}" placeholder="Enter meta title" id="input-meta_title" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-price">Product price</label>
+							<div class="col-sm-10">
+								<input type="text" name="price" value="{{ price }}" placeholder="Enter price" id="input-price" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-model">Product model</label>
+							<div class="col-sm-10">
+								<input type="text" name="model" value="{{ model }}" placeholder="Enter model" id="input-model" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-quantity">Product quantity</label>
+							<div class="col-sm-10">
+								<input type="text" name="quantity" value="{{ quantity }}" placeholder="Enter quantity" id="input-quantity" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="input-status">Product status</label>
+							<div class="col-sm-10">
+								<input type="text" name="status" value="{{ status }}" placeholder="Enter status" id="input-status" class="form-control"/>
+							</div>
 						</div>
 					</div>
 				</form>
