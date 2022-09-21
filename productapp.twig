@@ -5,10 +5,10 @@
 <div id="content">
 	<div class="page-header">
 		<div class="container-fluid">
-			<div clas="pull-right">
-				<a class="btn btn-primary" href="{{add}}">Add</a>
-				<button class="btn btn-default">Copy</button>
-				<button type="submit" class="btn btn-danger" form="form-product">Delete</button>
+			<div class="pull-right">
+				<a class="btn btn-primary" href="{{add}}"><i class="fa fa-plus"></i></a>
+				<button type="submit" formaction="{{copy}}" class="btn btn-default" form="form-product"><i class="fa fa-copy"></i></button>
+				<button type="button" class="btn btn-danger" form="form-product" onclick="confirm('Are you sure you want to delete this product?') ? $('#form-product').submit() : false;"><i class="fa fa-trash-o"></i></button>
 				{# <button type="button" class="btn btn-danger" formaction="delete" data-toggle="tooltip" onclick="$(#'form-product').submit()">Delete</button> #}
 			</div>
 			<h1>{{headint_title}}</h1>
@@ -43,7 +43,7 @@
 					{% for product in products %}
 						<tr>
 							<td class='text-center'>
-								<input type='checkbox' name='selected[]' value="{{product.product_id}}" checked='checked' onclick="$(this).prop('checked', this.checked);"/>
+								<input type='checkbox' name='selected[]' value="{{product.product_id}}" onclick="$(this).prop('checked', this.checked);"/>
 							</td>
 							<td scope="row">{{product.product_id}}</td>
 							<td>{{product.name}}</td>
